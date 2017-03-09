@@ -88,9 +88,6 @@ public class NetworkTask extends AsyncTask<Void, Void, WeatherModel> {
         } catch (IOException e) {
             e.printStackTrace();
         }
-
-
-
         return null;
     }
 

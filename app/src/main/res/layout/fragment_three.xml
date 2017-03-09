@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_gravity ="center"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:layout_marginTop="30dp"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:gravity="center"
+        android:layout_centerHorizontal="true"
+        android:text="Lokalizacja"
+        android:textColor="#040404"
+        android:textSize="20dp"
+        android:id="@+id/tvLocalization"
+        android:enabled="false"
+        android:editable="false" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:layout_weight="0.40"
+            android:text="dzien"
+            android:textColor="#040404"
+            android:textSize="20dp"
+            android:id="@+id/tvDay1"
+            android:enabled="false"
+            android:editable="false"/>
+
+        <TextView
+            android:text=""
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:layout_weight="0.40"
+            android:textSize="25dp"
+            android:id="@+id/tvTemp1"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.20"
+            android:id="@+id/imageView1"
+            android:layout_gravity="right"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+
+    <TextView
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_weight="0.40"
+        android:text="dzien"
+        android:textColor="#040404"
+        android:textSize="20dp"
+        android:id="@+id/tvDay2"
+        android:enabled="false"
+        android:editable="false"/>
+
+        <TextView
+            android:text=""
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:layout_weight="0.40"
+            android:textSize="25dp"
+            android:id="@+id/tvTemp2"/>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.20"
+        android:id="@+id/imageView2"/>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+    <TextView
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_weight="0.40"
+        android:text="dzien"
+        android:textColor="#040404"
+        android:textSize="20dp"
+        android:id="@+id/tvDay3"
+        android:enabled="false"
+        android:editable="false"/>
+
+
+    <TextView
+        android:text=""
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_weight="0.40"
+        android:textSize="25dp"
+        android:id="@+id/tvTemp3"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.20"
+            android:id="@+id/imageView3"/>
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+    <TextView
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_weight="0.40"
+        android:text="dzien"
+        android:textColor="#040404"
+        android:textSize="20dp"
+        android:id="@+id/tvDay4"
+        android:enabled="false"
+        android:editable="false"/>
+
+
+    <TextView
+        android:text=""
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_weight="0.40"
+        android:textSize="25dp"
+        android:id="@+id/tvTemp4"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.20"
+            android:id="@+id/imageView4"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+    <TextView
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_weight="0.40"
+        android:text="dzien"
+        android:textColor="#040404"
+        android:textSize="20dp"
+        android:id="@+id/tvDay5"
+        android:enabled="false"
+        android:editable="false"/>
+
+    <TextView
+        android:text=""
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_weight="0.40"
+        android:textSize="25dp"
+        android:id="@+id/tvTemp5"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.20"
+            android:id="@+id/imageView5"/>
+    </LinearLayout>
+
+</LinearLayout>

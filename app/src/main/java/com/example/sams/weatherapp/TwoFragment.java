@@ -30,7 +30,7 @@ public class TwoFragment extends Fragment implements IWeatherCallback {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_one, container, false);
+        View view = inflater.inflate(R.layout.fragment_two, container, false);
         tvLocalization = (TextView)view.findViewById(R.id.tvLocalization);
         tvTemp = (TextView)view.findViewById(R.id.tvTemp);
 
@@ -40,8 +40,6 @@ public class TwoFragment extends Fragment implements IWeatherCallback {
         if(isNetwork) {
             new NetworkTask(getContext(), this).execute();
         }
-
-
         return view;
     }
 
@@ -63,6 +61,8 @@ public class TwoFragment extends Fragment implements IWeatherCallback {
         tvLocalization.setText(weatherModel.getCity().getName());
         Double d = convertKelvinToCelcius(weatherModel.getList().get(1).getTemp().getDay());
         tvTemp.setText(String.format( "%1$.1f°", d));
+
+
     }
 
     public Double convertKelvinToCelcius(Double kelvin){

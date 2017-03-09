@@ -9,26 +9,47 @@
 
 
     <TextView
+        android:layout_marginTop="50dp"
         android:layout_height="wrap_content"
         android:layout_width="wrap_content"
         android:gravity="center"
         android:layout_centerHorizontal="true"
         android:text="Lokalizacja"
         android:textColor="#040404"
-        android:textSize="20dp"
+        android:textSize="40dp"
         android:id="@+id/tvLocalization"
         android:enabled="false"
         android:editable="false" />
 
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageView"
+        android:layout_below="@id/tvLocalization"/>
+
     <TextView
-        android:text=""
+        android:text="temperatura"
         android:layout_height="wrap_content"
         android:layout_width="match_parent"
         android:gravity="center"
-
-        android:layout_centerHorizontal="true"
-        android:textSize="50dp"
+        android:textSize="60dp"
+        android:textColor="#040404"
         android:id="@+id/tvTemp"
-        android:layout_below="@id/tvLocalization"/>
+        android:layout_alignLeft="@+id/imageView"
+        android:layout_alignTop="@+id/imageView"
+        android:layout_alignRight="@+id/imageView"/>
+
+    <TextView
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:gravity="center"
+        android:layout_centerHorizontal="true"
+        android:text="Opis"
+        android:textColor="#3b3939"
+        android:textSize="20dp"
+        android:id="@+id/tvDescription"
+        android:enabled="false"
+        android:editable="false"
+        android:layout_below="@id/imageView"/>
 
 </RelativeLayout>

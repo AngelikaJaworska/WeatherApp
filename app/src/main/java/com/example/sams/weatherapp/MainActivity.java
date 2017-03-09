@@ -41,8 +41,8 @@ public class MainActivity extends AppCompatActivity {
     private void setupViewPager(ViewPager viewPager) {
         ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
         adapter.addFragment(new OneFragment(), "Today");
-        adapter.addFragment(new TwoFragment(), "Yesterday");
-        adapter.addFragment(new OneFragment(), "Week");
+        adapter.addFragment(new TwoFragment(), "Tomorrow");
+        adapter.addFragment(new ThreeFragment(), "5 Days");
         viewPager.setAdapter(adapter);
     }
 

@@ -9,6 +9,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
@@ -23,6 +24,8 @@ public class OneFragment extends Fragment implements IWeatherCallback{
 
     private TextView tvLocalization;
     private TextView tvTemp;
+    private ImageView imageView;
+    private TextView tvDescription;
 
     public OneFragment() {
         // Required empty public constructor
@@ -35,6 +38,8 @@ public class OneFragment extends Fragment implements IWeatherCallback{
         View view = inflater.inflate(R.layout.fragment_one, container, false);
         tvLocalization = (TextView)view.findViewById(R.id.tvLocalization);
         tvTemp = (TextView)view.findViewById(R.id.tvTemp);
+        imageView = (ImageView)view.findViewById(R.id.imageView);
+        tvDescription = (TextView)view.findViewById(R.id.tvDescription);
 
         boolean isNetwork = isNetworkAvailable();
         Log.d("MainActivity", "isNetwork: " + isNetwork);
@@ -42,8 +47,6 @@ public class OneFragment extends Fragment implements IWeatherCallback{
         if(isNetwork) {
             new NetworkTask(getContext(), this).execute();
         }
-
-
         return view;
     }
 
@@ -64,10 +67,16 @@ public class OneFragment extends Fragment implements IWeatherCallback{
     public void refreshView(WeatherModel weatherModel) {
         tvLocalization.setText(weatherModel.getCity().getName());
         Double d = convertKelvinToCelcius(weatherModel.getList().get(0).getTemp().getDay());
-        tvTemp.setText(String.format( "%1$.1f°", d));
+        tvTemp.setText(String.format("%1$.1f°", d));
+
+        String icon = weatherModel.getList().get(0).getWeather().get(0).getIcon();
+        new IconTask(imageView,icon,225).execute();
+
+        tvDescription.setText(weatherModel.getList().get(0).getWeather().get(0).getDescription());
     }
 
     public Double convertKelvinToCelcius(Double kelvin){
+
         return kelvin - 273.15;
     }
 
