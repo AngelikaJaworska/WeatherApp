@@ -6,7 +6,7 @@
     android:layout_height="match_parent">
 
     <TextView
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="15dp"
         android:layout_height="wrap_content"
         android:layout_width="match_parent"
         android:gravity="center"
@@ -24,7 +24,6 @@
         android:orientation="horizontal">
 
         <TextView
-
             android:layout_height="wrap_content"
             android:layout_width="wrap_content"
             android:layout_weight="0.40"
@@ -36,12 +35,13 @@
             android:editable="false"/>
 
         <TextView
-            android:text=""
-            android:layout_height="wrap_content"
-            android:layout_width="wrap_content"
-            android:layout_weight="0.40"
-            android:textSize="25dp"
-            android:id="@+id/tvTemp1"/>
+        android:text="temp"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_weight="0.40"
+        android:textColor="#040404"
+        android:textSize="30dp"
+         android:id="@+id/tvTemp1"/>
 
         <ImageView
             android:layout_width="wrap_content"
@@ -51,6 +51,14 @@
             android:layout_gravity="right"/>
 
     </LinearLayout>
+
+    <TextView
+        android:text="cos"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_gravity="center"
+        android:textSize="20dp"
+        android:id="@+id/tvDescription1" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -74,7 +82,8 @@
             android:layout_height="wrap_content"
             android:layout_width="wrap_content"
             android:layout_weight="0.40"
-            android:textSize="25dp"
+            android:textColor="#040404"
+            android:textSize="30dp"
             android:id="@+id/tvTemp2"/>
 
     <ImageView
@@ -83,8 +92,15 @@
         android:layout_weight="0.20"
         android:id="@+id/imageView2"/>
 
-
     </LinearLayout>
+
+    <TextView
+        android:text="cos"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_gravity="center"
+        android:textSize="20dp"
+        android:id="@+id/tvDescription2" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -107,7 +123,8 @@
         android:layout_height="wrap_content"
         android:layout_width="wrap_content"
         android:layout_weight="0.40"
-        android:textSize="25dp"
+        android:textColor="#040404"
+        android:textSize="30dp"
         android:id="@+id/tvTemp3"/>
 
         <ImageView
@@ -117,6 +134,13 @@
             android:id="@+id/imageView3"/>
     </LinearLayout>
 
+    <TextView
+        android:text="cos"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_gravity="center"
+        android:textSize="20dp"
+        android:id="@+id/tvDescription3" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -139,7 +163,8 @@
         android:layout_height="wrap_content"
         android:layout_width="wrap_content"
         android:layout_weight="0.40"
-        android:textSize="25dp"
+        android:textColor="#040404"
+        android:textSize="30dp"
         android:id="@+id/tvTemp4"/>
 
         <ImageView
@@ -148,6 +173,14 @@
             android:layout_weight="0.20"
             android:id="@+id/imageView4"/>
     </LinearLayout>
+
+    <TextView
+        android:text="cos"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_gravity="center"
+        android:textSize="20dp"
+        android:id="@+id/tvDescription4" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -169,7 +202,8 @@
         android:layout_height="wrap_content"
         android:layout_width="wrap_content"
         android:layout_weight="0.40"
-        android:textSize="25dp"
+        android:textColor="#040404"
+        android:textSize="30dp"
         android:id="@+id/tvTemp5"/>
 
         <ImageView
@@ -178,5 +212,13 @@
             android:layout_weight="0.20"
             android:id="@+id/imageView5"/>
     </LinearLayout>
+
+    <TextView
+        android:text="cos"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_gravity="center"
+        android:textSize="20dp"
+        android:id="@+id/tvDescription5"/>
 
 </LinearLayout>

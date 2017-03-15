@@ -1,33 +1,111 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_gravity ="center"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
     <TextView
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="40dp"
         android:layout_height="wrap_content"
         android:layout_width="match_parent"
         android:gravity="center"
         android:layout_centerHorizontal="true"
         android:text="Lokalizacja"
         android:textColor="#040404"
-        android:textSize="20dp"
+        android:textSize="40dp"
         android:id="@+id/tvLocalization"
         android:enabled="false"
         android:editable="false" />
 
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageView"
+        android:layout_below="@id/tvLocalization"/>
+
     <TextView
-        android:text=""
+        android:text="temperatura"
         android:layout_height="wrap_content"
         android:layout_width="match_parent"
         android:gravity="center"
-
-        android:layout_centerHorizontal="true"
-        android:textSize="50dp"
+        android:textSize="60dp"
+        android:textColor="#040404"
         android:id="@+id/tvTemp"
-        android:layout_below="@id/tvLocalization"/>
+        android:layout_alignLeft="@+id/imageView"
+        android:layout_alignTop="@+id/imageView"
+        android:layout_alignRight="@+id/imageView"/>
+
+    <TextView
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:gravity="center"
+        android:layout_centerHorizontal="true"
+        android:text="Opis"
+        android:textColor="#3b3939"
+        android:textSize="25dp"
+        android:id="@+id/tvDescription"
+        android:enabled="false"
+        android:editable="false"
+        android:layout_below="@id/imageView"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_gravity ="left"
+        android:layout_marginTop="170dp"
+        android:layout_marginLeft="15dp">
+
+    <TextView
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:text="Cisnienie atmosferyczne"
+        android:layout_marginTop="130dp"
+        android:textColor="#3b3939"
+        android:textSize="20dp"
+        android:id="@+id/tvPressure"
+        android:enabled="false"
+        android:editable="false"
+        android:layout_below="@id/tvTemp"/>
+    <TextView
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:text="Wilgotnosc"
+        android:textColor="#3b3939"
+        android:textSize="20dp"
+        android:id="@+id/tvHumidity"
+        android:enabled="false"
+        android:editable="false"
+        android:layout_below="@id/tvPressure"/>
+
+    <TextView
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:text="Predkosc wiatru"
+        android:textColor="#3b3939"
+        android:textSize="20dp"
+        android:id="@+id/tvWindSpeed"
+        android:enabled="false"
+        android:editable="false"
+        android:layout_below="@id/tvHumidity"/>
+
+    <TextView
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:text="Zachmurzenie"
+        android:textColor="#3b3939"
+        android:textSize="20dp"
+        android:id="@+id/tvCloudPerCent"
+        android:enabled="false"
+        android:editable="false"
+        android:layout_below="@id/tvWindSpeed"/>
 
 
-</LinearLayout>
+    </LinearLayout>
+
+</RelativeLayout>

@@ -28,18 +28,24 @@ public class ThreeFragment extends Fragment implements IWeatherCallback {
     private TextView tvLocalization;
     private TextView tvTemp1;
     private TextView tvDay1;
+    private TextView tvDescription1;
 
     private TextView tvTemp2;
     private TextView tvDay2;
+    private TextView tvDescription2;
+
 
     private TextView tvTemp3;
     private TextView tvDay3;
+    private TextView tvDescription3;
 
     private TextView tvTemp4;
     private TextView tvDay4;
+    private TextView tvDescription4;
 
     private TextView tvTemp5;
     private TextView tvDay5;
+    private TextView tvDescription5;
 
     private ImageView imageView1;
     private ImageView imageView2;
@@ -64,18 +70,23 @@ public class ThreeFragment extends Fragment implements IWeatherCallback {
 
         tvDay1 = (TextView)view.findViewById(R.id.tvDay1);
         tvTemp1 = (TextView)view.findViewById(R.id.tvTemp1);
+        tvDescription1 = (TextView) view.findViewById(R.id.tvDescription1);
 
         tvDay2 = (TextView)view.findViewById(R.id.tvDay2);
         tvTemp2 = (TextView)view.findViewById(R.id.tvTemp2);
+        tvDescription2 = (TextView) view.findViewById(R.id.tvDescription2);
 
         tvDay3 = (TextView)view.findViewById(R.id.tvDay3);
         tvTemp3 = (TextView)view.findViewById(R.id.tvTemp3);
+        tvDescription3 = (TextView) view.findViewById(R.id.tvDescription3);
 
         tvDay4 = (TextView)view.findViewById(R.id.tvDay4);
         tvTemp4 = (TextView)view.findViewById(R.id.tvTemp4);
+        tvDescription4 = (TextView) view.findViewById(R.id.tvDescription4);
 
         tvDay5 = (TextView)view.findViewById(R.id.tvDay5);
         tvTemp5 = (TextView)view.findViewById(R.id.tvTemp5);
+        tvDescription5 = (TextView) view.findViewById(R.id.tvDescription5);
 
         boolean isNetwork = isNetworkAvailable();
         Log.d("MainActivity", "isNetwork: " + isNetwork);
@@ -148,6 +159,12 @@ public class ThreeFragment extends Fragment implements IWeatherCallback {
 
         Double d5 = convertKelvinToCelcius(weatherModel.getList().get(5).getTemp().getDay());
         tvTemp5.setText(String.format( "%1$.1f°", d5));
+
+        tvDescription1.setText(weatherModel.getList().get(1).getWeather().get(0).getDescription());
+        tvDescription2.setText(weatherModel.getList().get(2).getWeather().get(0).getDescription());
+        tvDescription3.setText(weatherModel.getList().get(3).getWeather().get(0).getDescription());
+        tvDescription4.setText(weatherModel.getList().get(4).getWeather().get(0).getDescription());
+        tvDescription5.setText(weatherModel.getList().get(5).getWeather().get(0).getDescription());
     }
 
     public Double convertKelvinToCelcius(Double kelvin){

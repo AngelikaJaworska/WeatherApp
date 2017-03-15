@@ -9,7 +9,7 @@
 
 
     <TextView
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="40dp"
         android:layout_height="wrap_content"
         android:layout_width="wrap_content"
         android:gravity="center"
@@ -46,10 +46,79 @@
         android:layout_centerHorizontal="true"
         android:text="Opis"
         android:textColor="#3b3939"
-        android:textSize="20dp"
+        android:textSize="25dp"
         android:id="@+id/tvDescription"
         android:enabled="false"
         android:editable="false"
         android:layout_below="@id/imageView"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_gravity ="left"
+        android:layout_marginTop="170dp"
+        android:layout_marginLeft="15dp">
+
+        <TextView
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:text="Cisnienie atmosferyczne"
+            android:layout_marginTop="130dp"
+            android:textColor="#3b3939"
+            android:textSize="20dp"
+            android:id="@+id/tvPressure"
+            android:enabled="false"
+            android:editable="false"
+            android:layout_below="@id/tvTemp"/>
+
+        <TextView
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:text="Wilgotnosc"
+            android:textColor="#3b3939"
+            android:textSize="20dp"
+            android:id="@+id/tvHumidity"
+            android:enabled="false"
+            android:editable="false"
+            android:layout_below="@id/tvPressure"/>
+
+        <TextView
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:text="Predkosc wiatru"
+            android:textColor="#3b3939"
+            android:textSize="20dp"
+            android:id="@+id/tvWindSpeed"
+            android:enabled="false"
+            android:editable="false"
+            android:layout_below="@id/tvHumidity"/>
+
+        <TextView
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:text="Zachmurzenie"
+            android:textColor="#3b3939"
+            android:textSize="20dp"
+            android:id="@+id/tvCloudPerCent"
+            android:enabled="false"
+            android:editable="false"
+            android:layout_below="@id/tvWindSpeed"/>
+
+        <TextView
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:text="Poziom opadow"
+            android:textColor="#3b3939"
+            android:textSize="20dp"
+            android:id="@+id/tvPrecipitation"
+            android:enabled="false"
+            android:editable="false"
+            android:layout_below="@id/tvCloudPerCent"/>
+
+
+    </LinearLayout>
+
+
 
 </RelativeLayout>

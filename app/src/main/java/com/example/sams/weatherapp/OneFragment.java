@@ -26,6 +26,11 @@ public class OneFragment extends Fragment implements IWeatherCallback{
     private TextView tvTemp;
     private ImageView imageView;
     private TextView tvDescription;
+    private TextView tvPressure;
+    private TextView tvHumidity;
+    private TextView tvWindSpeed;
+    private TextView tvCloudPerCent;
+    private TextView tvPrecipitation;
 
     public OneFragment() {
         // Required empty public constructor
@@ -40,6 +45,11 @@ public class OneFragment extends Fragment implements IWeatherCallback{
         tvTemp = (TextView)view.findViewById(R.id.tvTemp);
         imageView = (ImageView)view.findViewById(R.id.imageView);
         tvDescription = (TextView)view.findViewById(R.id.tvDescription);
+        tvPressure = (TextView) view.findViewById(R.id.tvPressure);
+        tvHumidity =  (TextView) view.findViewById(R.id.tvHumidity);
+        tvWindSpeed = (TextView) view.findViewById(R.id.tvWindSpeed);
+        tvCloudPerCent = (TextView) view.findViewById(R.id.tvCloudPerCent);
+        tvPrecipitation = (TextView) view.findViewById(R.id.tvPrecipitation);
 
         boolean isNetwork = isNetworkAvailable();
         Log.d("MainActivity", "isNetwork: " + isNetwork);
@@ -73,6 +83,27 @@ public class OneFragment extends Fragment implements IWeatherCallback{
         new IconTask(imageView,icon,225).execute();
 
         tvDescription.setText(weatherModel.getList().get(0).getWeather().get(0).getDescription());
+
+        Double pressure = weatherModel.getList().get(0).getPressure();
+        tvPressure.setText(String.format("Ciśnienie atmosferyczne: %1$.1f hPa", pressure));
+
+        int humidity = weatherModel.getList().get(0).getHumidity();
+        tvHumidity.setText("Wilgotność powietrza: "+String.valueOf(humidity) + "%");
+
+        Double windSpeed = weatherModel.getList().get(0).getSpeed();
+        tvWindSpeed.setText(String.format("Szybkość wiatru: %1$.1f m/sek", windSpeed));
+
+        int cloud = weatherModel.getList().get(0).getClouds();
+        tvCloudPerCent.setText("Procentowe zachmurzenie: " + String.valueOf(cloud) + "%");
+
+        Double precipitation = weatherModel.getList().get(0).getRain();
+        if(precipitation == null)
+        {
+            precipitation = 0.0;
+        }
+        tvPrecipitation.setText(String.format("Opady w ciągu ostatnich 3h: %1$.1f mm",  precipitation));
+
+
     }
 
     public Double convertKelvinToCelcius(Double kelvin){
