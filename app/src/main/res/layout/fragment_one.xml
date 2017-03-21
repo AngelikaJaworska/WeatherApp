@@ -14,7 +14,6 @@
         android:layout_width="wrap_content"
         android:gravity="center"
         android:layout_centerHorizontal="true"
-        android:text="Lokalizacja"
         android:textColor="#040404"
         android:textSize="40dp"
         android:id="@+id/tvLocalization"
@@ -28,7 +27,6 @@
         android:layout_below="@id/tvLocalization"/>
 
     <TextView
-        android:text="temperatura"
         android:layout_height="wrap_content"
         android:layout_width="match_parent"
         android:gravity="center"
@@ -44,7 +42,6 @@
         android:layout_width="wrap_content"
         android:gravity="center"
         android:layout_centerHorizontal="true"
-        android:text="Opis"
         android:textColor="#3b3939"
         android:textSize="25dp"
         android:id="@+id/tvDescription"
@@ -63,7 +60,6 @@
         <TextView
             android:layout_height="wrap_content"
             android:layout_width="wrap_content"
-            android:text="Cisnienie atmosferyczne"
             android:layout_marginTop="130dp"
             android:textColor="#3b3939"
             android:textSize="20dp"
@@ -75,7 +71,6 @@
         <TextView
             android:layout_height="wrap_content"
             android:layout_width="wrap_content"
-            android:text="Wilgotnosc"
             android:textColor="#3b3939"
             android:textSize="20dp"
             android:id="@+id/tvHumidity"
@@ -86,7 +81,6 @@
         <TextView
             android:layout_height="wrap_content"
             android:layout_width="wrap_content"
-            android:text="Predkosc wiatru"
             android:textColor="#3b3939"
             android:textSize="20dp"
             android:id="@+id/tvWindSpeed"
@@ -97,7 +91,6 @@
         <TextView
             android:layout_height="wrap_content"
             android:layout_width="wrap_content"
-            android:text="Zachmurzenie"
             android:textColor="#3b3939"
             android:textSize="20dp"
             android:id="@+id/tvCloudPerCent"
@@ -108,7 +101,6 @@
         <TextView
             android:layout_height="wrap_content"
             android:layout_width="wrap_content"
-            android:text="Poziom opadow"
             android:textColor="#3b3939"
             android:textSize="20dp"
             android:id="@+id/tvPrecipitation"

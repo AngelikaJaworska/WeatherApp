@@ -21,9 +21,9 @@ import java.util.Date;
 /**
  * Created by sams on 2017-02-28.
  */
-public class ThreeFragment extends Fragment implements IWeatherCallback {
+public class ThreeFragment extends WeatherFragment {
 
-    private static final String TAG = MainActivity.class.getSimpleName();
+    private static final String TAG = ThreeFragment.class.getSimpleName();
 
     private TextView tvLocalization;
     private TextView tvTemp1;
@@ -54,6 +54,12 @@ public class ThreeFragment extends Fragment implements IWeatherCallback {
     private ImageView imageView5;
 
     public ThreeFragment() {
+    }
+
+    @Override
+    public void onViewCreated(View view, Bundle savedInstanceState) {
+        Log.i(TAG, "onViewCreated");
+        super.onViewCreated(view, savedInstanceState);
     }
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -88,31 +94,16 @@ public class ThreeFragment extends Fragment implements IWeatherCallback {
         tvTemp5 = (TextView)view.findViewById(R.id.tvTemp5);
         tvDescription5 = (TextView) view.findViewById(R.id.tvDescription5);
 
-        boolean isNetwork = isNetworkAvailable();
-        Log.d("MainActivity", "isNetwork: " + isNetwork);
-
-        if(isNetwork) {
-            new NetworkTask(getContext(), this).execute();
-        }
-
         return view;
     }
 
-    public boolean isNetworkAvailable() {
-        ConnectivityManager cm = (ConnectivityManager)
-                getContext().getSystemService(Context.CONNECTIVITY_SERVICE);
-        NetworkInfo networkInfo = cm.getActiveNetworkInfo();
-        // if no network is available networkInfo will be null
-        // otherwise check if we are connected
-        if (networkInfo != null && networkInfo.isConnected()) {
-            return true;
-        }
-        return false;
-    }
-
-
     @Override
     public void refreshView(WeatherModel weatherModel) {
+        if (weatherModel == null) {
+            Log.i(TAG, "null");
+            return;
+        }
+        Log.i(TAG, "refreshView");
         tvLocalization.setText(weatherModel.getCity().getName());
 
         String icon1 = weatherModel.getList().get(1).getWeather().get(0).getIcon();

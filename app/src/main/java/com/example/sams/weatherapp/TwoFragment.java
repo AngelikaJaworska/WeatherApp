@@ -17,9 +17,9 @@ import com.example.sams.weatherapp.model.WeatherModel;
 /**
  * Created by sams on 2017-02-27.
  */
-public class TwoFragment extends Fragment implements IWeatherCallback {
+public class TwoFragment extends WeatherFragment {
 
-    private static final String TAG = MainActivity.class.getSimpleName();
+    private static final String TAG = TwoFragment.class.getSimpleName();
 
     private TextView tvLocalization;
     private TextView tvTemp;
@@ -32,6 +32,12 @@ public class TwoFragment extends Fragment implements IWeatherCallback {
     private TextView tvPrecipitation;
 
     public TwoFragment() {
+    }
+
+    @Override
+    public void onViewCreated(View view, Bundle savedInstanceState) {
+        Log.i(TAG, "onViewCreated");
+        super.onViewCreated(view, savedInstanceState);
     }
 
     @Override
@@ -49,30 +55,16 @@ public class TwoFragment extends Fragment implements IWeatherCallback {
         tvCloudPerCent = (TextView) view.findViewById(R.id.tvCloudPerCent);
         tvPrecipitation = (TextView) view.findViewById(R.id.tvPrecipitation);
 
-        boolean isNetwork = isNetworkAvailable();
-        Log.d("MainActivity", "isNetwork: " + isNetwork);
-
-        if(isNetwork) {
-            new NetworkTask(getContext(), this).execute();
-        }
         return view;
     }
 
-    public boolean isNetworkAvailable() {
-        ConnectivityManager cm = (ConnectivityManager)
-                getContext().getSystemService(Context.CONNECTIVITY_SERVICE);
-        NetworkInfo networkInfo = cm.getActiveNetworkInfo();
-        // if no network is available networkInfo will be null
-        // otherwise check if we are connected
-        if (networkInfo != null && networkInfo.isConnected()) {
-            return true;
-        }
-        return false;
-    }
-
-
     @Override
     public void refreshView(WeatherModel weatherModel) {
+        if (weatherModel == null) {
+            Log.i(TAG, "null");
+            return;
+        }
+        Log.i(TAG, "refreshView");
         tvLocalization.setText(weatherModel.getCity().getName());
         Double d = convertKelvinToCelcius(weatherModel.getList().get(1).getTemp().getDay());
         tvTemp.setText(String.format("%1$.1f°", d));

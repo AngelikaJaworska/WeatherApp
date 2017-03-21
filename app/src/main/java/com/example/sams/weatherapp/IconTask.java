@@ -1,5 +1,7 @@
 package com.example.sams.weatherapp;
 
+import android.app.ProgressDialog;
+import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.drawable.Icon;
@@ -23,6 +25,11 @@ public class IconTask extends AsyncTask <Void, Void,Bitmap> {
         this.imageView = imageView;
         this.iconName = iconName;
         this.size = size;
+    }
+
+    @Override
+    protected void onPreExecute() {
+        super.onPreExecute();
     }
 
     @Override

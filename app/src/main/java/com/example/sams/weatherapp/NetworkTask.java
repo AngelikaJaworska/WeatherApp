@@ -31,13 +31,15 @@ public class NetworkTask extends AsyncTask<Void, Void, WeatherModel> {
     private static final String APIKey = "e9851779417a301c57d555fb9ff9329f";
     private Context context;
     private IWeatherCallback weatherCallback;
-
+    private String localization; //localization
     private ProgressDialog spinner;
+    private String link;
 
-    public NetworkTask(Context context, IWeatherCallback weatherCallback) {
+    public NetworkTask(Context context, IWeatherCallback weatherCallback, String localization) {
         this.context = context;
         spinner = new ProgressDialog(context);
         this.weatherCallback = weatherCallback;
+        this.localization = localization;
     }
 
     @Override
@@ -56,13 +58,22 @@ public class NetworkTask extends AsyncTask<Void, Void, WeatherModel> {
 
     @Override
     protected WeatherModel doInBackground(Void... params) {
-        Location location = getLocation();
-        if(location == null)
+
+        if(localization != null)
         {
-            return null;
+            localization = localization.substring(0, 1).toUpperCase() + localization.substring(1);;
+            link = "http://api.openweathermap.org/data/2.5/forecast/daily?q="+localization+"&lang=pl&&appid="+ APIKey;
+        }
+        else
+        {
+            Location location = getLocation();
+            if(location == null)
+            {
+                return null;
+            }
+            link = "http://api.openweathermap.org/data/2.5/forecast/daily?lat="+location.getLatitude()+"&lon="+location.getLongitude()+"&lang=pl&appid="+APIKey;
         }
 
-        String link = "http://api.openweathermap.org/data/2.5/forecast/daily?lat="+location.getLatitude()+"&lon="+location.getLongitude()+"&lang=pl&appid="+APIKey;
         try {
             URL url = new URL(link);
             HttpURLConnection conn = (HttpURLConnection) url.openConnection();

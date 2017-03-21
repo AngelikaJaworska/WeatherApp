@@ -1,42 +1,78 @@
-<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <android.support.design.widget.AppBarLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
-
-        <android.support.v7.widget.Toolbar
-            android:id="@+id/toolbar"
-            android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            android:background="?attr/colorPrimary"
-            app:layout_scrollFlags="scroll|enterAlways"
-            app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
-
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="?attr/actionBarSize"
-                android:text="Wyszukaj lokalizacje"
-                android:layout_gravity="right"
-                android:textColor="#3b3939"
-                android:backgroundTint="@android:color/holo_orange_dark"
-                />
-        </android.support.v7.widget.Toolbar>
-
-        <android.support.design.widget.TabLayout
-            android:id="@+id/tabs"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:tabMode="fixed"
-            app:tabGravity="fill"/>
-    </android.support.design.widget.AppBarLayout>
-
-    <android.support.v4.view.ViewPager
-        android:id="@+id/viewpager"
+    <android.support.design.widget.CoordinatorLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior"  />
-</android.support.design.widget.CoordinatorLayout>
+        android:id="@+id/coordinator">
+
+        <android.support.design.widget.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="?attr/colorPrimary"
+                app:layout_scrollFlags="scroll|enterAlways"
+                app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+
+                <Button
+                    android:id="@+id/btnSearchLoc"
+                    android:layout_width="wrap_content"
+                    android:layout_height="?attr/actionBarSize"
+                    android:layout_gravity="right"
+                    android:backgroundTint="@android:color/holo_orange_dark"
+                    android:onClick="searchIt"
+                    android:text="Wyszukaj lokalizacje"
+                    android:textColor="#3b3939" />
+            </android.support.v7.widget.Toolbar>
+
+            <android.support.design.widget.TabLayout
+                android:id="@+id/tabs"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:tabGravity="fill"
+                app:tabMode="fixed" />
+        </android.support.design.widget.AppBarLayout>
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/viewpager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+
+
+    </android.support.design.widget.CoordinatorLayout>
+
+    <LinearLayout
+        android:id="@+id/llsearch"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <EditText
+            android:id="@+id/etLocalization"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="60dp" />
+
+        <Button
+            android:id="@+id/btnSearch"
+            android:layout_width="170dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:backgroundTint="@android:color/holo_orange_dark"
+            android:onClick="searchLoc"
+            android:text="Wyszukaj"
+            android:textColor="#3b3939" />
+
+    </LinearLayout>
+
+</RelativeLayout>
+

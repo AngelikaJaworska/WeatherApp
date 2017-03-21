@@ -11,7 +11,6 @@
         android:layout_width="match_parent"
         android:gravity="center"
         android:layout_centerHorizontal="true"
-        android:text="Lokalizacja"
         android:textColor="#040404"
         android:textSize="20dp"
         android:id="@+id/tvLocalization"
@@ -27,7 +26,6 @@
             android:layout_height="wrap_content"
             android:layout_width="wrap_content"
             android:layout_weight="0.40"
-            android:text="dzien"
             android:textColor="#040404"
             android:textSize="20dp"
             android:id="@+id/tvDay1"
@@ -35,7 +33,6 @@
             android:editable="false"/>
 
         <TextView
-        android:text="temp"
         android:layout_height="wrap_content"
         android:layout_width="wrap_content"
         android:layout_weight="0.40"
@@ -53,7 +50,6 @@
     </LinearLayout>
 
     <TextView
-        android:text="cos"
         android:layout_height="wrap_content"
         android:layout_width="wrap_content"
         android:layout_gravity="center"
@@ -70,7 +66,6 @@
         android:layout_height="wrap_content"
         android:layout_width="wrap_content"
         android:layout_weight="0.40"
-        android:text="dzien"
         android:textColor="#040404"
         android:textSize="20dp"
         android:id="@+id/tvDay2"
@@ -78,7 +73,6 @@
         android:editable="false"/>
 
         <TextView
-            android:text=""
             android:layout_height="wrap_content"
             android:layout_width="wrap_content"
             android:layout_weight="0.40"
@@ -95,7 +89,6 @@
     </LinearLayout>
 
     <TextView
-        android:text="cos"
         android:layout_height="wrap_content"
         android:layout_width="wrap_content"
         android:layout_gravity="center"
@@ -110,7 +103,6 @@
         android:layout_height="wrap_content"
         android:layout_width="wrap_content"
         android:layout_weight="0.40"
-        android:text="dzien"
         android:textColor="#040404"
         android:textSize="20dp"
         android:id="@+id/tvDay3"
@@ -119,7 +111,6 @@
 
 
     <TextView
-        android:text=""
         android:layout_height="wrap_content"
         android:layout_width="wrap_content"
         android:layout_weight="0.40"
@@ -135,7 +126,6 @@
     </LinearLayout>
 
     <TextView
-        android:text="cos"
         android:layout_height="wrap_content"
         android:layout_width="wrap_content"
         android:layout_gravity="center"
@@ -150,7 +140,6 @@
         android:layout_height="wrap_content"
         android:layout_width="wrap_content"
         android:layout_weight="0.40"
-        android:text="dzien"
         android:textColor="#040404"
         android:textSize="20dp"
         android:id="@+id/tvDay4"
@@ -159,7 +148,6 @@
 
 
     <TextView
-        android:text=""
         android:layout_height="wrap_content"
         android:layout_width="wrap_content"
         android:layout_weight="0.40"
@@ -175,7 +163,6 @@
     </LinearLayout>
 
     <TextView
-        android:text="cos"
         android:layout_height="wrap_content"
         android:layout_width="wrap_content"
         android:layout_gravity="center"
@@ -190,7 +177,6 @@
         android:layout_height="wrap_content"
         android:layout_width="wrap_content"
         android:layout_weight="0.40"
-        android:text="dzien"
         android:textColor="#040404"
         android:textSize="20dp"
         android:id="@+id/tvDay5"
@@ -198,7 +184,6 @@
         android:editable="false"/>
 
     <TextView
-        android:text=""
         android:layout_height="wrap_content"
         android:layout_width="wrap_content"
         android:layout_weight="0.40"
@@ -214,7 +199,6 @@
     </LinearLayout>
 
     <TextView
-        android:text="cos"
         android:layout_height="wrap_content"
         android:layout_width="wrap_content"
         android:layout_gravity="center"
