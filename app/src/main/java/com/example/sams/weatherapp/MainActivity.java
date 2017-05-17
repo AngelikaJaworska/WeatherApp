@@ -2,6 +2,7 @@ package com.example.sams.weatherapp;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
@@ -17,8 +18,11 @@ import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.inputmethod.InputMethodManager;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import com.example.sams.weatherapp.model.Weather;
 import com.example.sams.weatherapp.model.WeatherModel;
@@ -45,6 +49,10 @@ public class MainActivity extends AppCompatActivity implements IWeatherCallback{
     private TwoFragment twoFragment;
     private ThreeFragment threeFragment;
 
+    public static final String MY_PREFS_NAME = "MyPrefsFile";
+    public String result;
+    public Button btnSavedLocalization;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -53,6 +61,8 @@ public class MainActivity extends AppCompatActivity implements IWeatherCallback{
         setSupportActionBar(toolbar);
 
        // getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        btnSavedLocalization = (Button)findViewById(R.id.btnSavedLocalization);
 
         viewPager = (ViewPager) findViewById(R.id.viewpager);
         setupViewPager(viewPager);
@@ -76,14 +86,57 @@ public class MainActivity extends AppCompatActivity implements IWeatherCallback{
         coordinator.setVisibility(View.GONE);
     }
 
+    public void goBack(View view)
+    {
+        llsearch.setVisibility(View.GONE);
+        coordinator.setVisibility(View.VISIBLE);
+
+        boolean isNetwork = isNetworkAvailable();
+        if(isNetwork) {
+            new NetworkTask(MainActivity.this, this, null).execute();
+        }
+    }
+
     public void searchLoc(View view)
     {
         String localization = etLocalization.getText().toString();
+        result = localization.replaceAll("\\s+$", "");
         boolean isNetwork = isNetworkAvailable();
         if(isNetwork) {
-            new NetworkTask(MainActivity.this, this, localization).execute();
+            new NetworkTask(MainActivity.this, this, result).execute();
+        }
+        InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
+        imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
+        if(result != null)
+        {
+            btnSavedLocalization.setText(result);
+            settingValuesInPreferences();
         }
     }
+
+    public void settingValuesInPreferences()
+    {
+        SharedPreferences.Editor editor = getSharedPreferences(MY_PREFS_NAME, MODE_PRIVATE).edit();
+        editor.putString("localization", result);
+        editor.commit();
+    }
+
+    public void retrieveDataFromPreferences(View view)
+    {
+        SharedPreferences prefs = getSharedPreferences(MY_PREFS_NAME, MODE_PRIVATE);
+        String restoredText = prefs.getString("localization", null);
+        if (restoredText != null) {
+            String name = prefs.getString("localization", "no loc");//"No name defined" is the default value.
+            Log.i(TAG, "odczytano: " + name);
+            boolean isNetwork = isNetworkAvailable();
+            if(isNetwork) {
+                new NetworkTask(MainActivity.this, this, name).execute();
+            }
+            InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
+            imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
+        }
+    }
+
 
     public boolean isNetworkAvailable() {
         ConnectivityManager cm = (ConnectivityManager)

@@ -72,6 +72,30 @@
             android:text="Wyszukaj"
             android:textColor="#3b3939" />
 
+        <Button
+            android:id="@+id/btnGoBack"
+            android:layout_width="170dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:drawableLeft="@drawable/ic_action_name"
+            android:backgroundTint="@android:color/holo_orange_dark"
+            android:onClick="goBack"
+            android:text="Wróć do bieżącej lokalizacji"
+            android:textColor="#3b3939" />
+
+        <Button
+            android:id="@+id/btnSavedLocalization"
+            android:layout_width="170dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:drawableLeft="@drawable/ic_action_name"
+            android:backgroundTint="@android:color/holo_orange_dark"
+            android:onClick="retrieveDataFromPreferences"
+            android:text="Wybierz zapisaną lokalizacje"
+            android:textColor="#3b3939" />
+
+
+
     </LinearLayout>
 
 </RelativeLayout>
